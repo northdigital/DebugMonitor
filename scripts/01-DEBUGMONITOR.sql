@@ -23,10 +23,8 @@ BEGIN
   dbms_network_acl_admin.assign_acl(acl => 'DEBUGMONITOR.xml', host => /*node host*/ '192.168.8.168', lower_port => 4321, upper_port => null);
 END;
 
+/*
 select * from dba_network_acls;
 select * from dba_network_acl_privileges;
+*/
 
--- login as system
--- run package utils.pck
-
-grant execute on debugmonitor.utils to startouch with grant option;
