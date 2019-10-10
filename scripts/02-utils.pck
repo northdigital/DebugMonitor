@@ -10,11 +10,11 @@ create or replace package body debugmonitor.utils is
   procedure debugMonitor(a_text varchar2) is
     req            utl_http.req;
     res            utl_http.resp;
-    url            varchar2(4000) := 'http://192.168.8.168:4321/?';
+    url            varchar2(4000) := 'http://192.168.1.201:4321/?';
     buffer         varchar2(4000);
     detailed_error varchar2(4000);
   begin
-  
+    --/*
     UTL_HTTP.set_response_error_check(false);
   
     url := utl_url.escape(url || '&msg=' || a_text);
@@ -32,6 +32,7 @@ create or replace package body debugmonitor.utils is
                               'An error was encountered - ' || SQLCODE ||
                               ' -ERROR- ' || SQLERRM || ' detailed_error=' ||
                               detailed_error);
+      --*/                              
       null;
   end debugMonitor;
 
