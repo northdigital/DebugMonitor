@@ -3,7 +3,6 @@
 create user DEBUGMONITOR identified externally;
 
 grant execute on utl_http to DEBUGMONITOR with grant option;
-grant execute on dbms_lock to CASINOCRM with grant option;
 
 /*
 BEGIN DBMS_NETWORK_ACL_ADMIN.DROP_ACL(acl => '/sys/acls/DEBUGMONITOR.xml'); END;
