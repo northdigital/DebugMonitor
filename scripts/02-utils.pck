@@ -1,23 +1,27 @@
 create or replace package debugmonitor.utils is
  
-  procedure debugMonitor(a_text varchar2);
+  procedure debugMonitor(a_text in varchar2, a_file in varchar2 := null);
 
 end;
 /
 create or replace package body debugmonitor.utils is
 
   -------------------------------------------------------------------------------------
-  procedure debugMonitor(a_text varchar2) is
+  procedure debugMonitor(a_text varchar2, a_file in varchar2 := null) is
     req            utl_http.req;
     res            utl_http.resp;
-    url            varchar2(4000) := 'http://192.168.1.201:4321/?';
+    url            varchar2(4000) := 'http://192.168.1.202:4321/?';
     buffer         varchar2(4000);
     detailed_error varchar2(4000);
   begin
-    --/*
+    /*
     UTL_HTTP.set_response_error_check(false);
   
     url := utl_url.escape(url || '&msg=' || a_text);
+    if a_file is not null then
+      url := utl_url.escape(url || '&file=' || a_file);
+    end if;
+    
     req := utl_http.begin_request(url, 'GET', UTL_HTTP.HTTP_VERSION_1_1);
     utl_http.set_header(req, 'user-agent', 'oracle database server');
     res := utl_http.get_response(req);
