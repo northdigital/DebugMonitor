@@ -14,16 +14,15 @@ http.createServer(function (req, res) {
   if(q.msg) {
     let msg = decodeURI(q.msg)
 
-    if(msg.toUpperCase() === '@CLEAR@') {
+    if(msg.toUpperCase() === '@CLEAR@') {      
       console.clear();
-    } else {
-      console.log(msg);
-      if(q.file) {
-        fs.appendFile(q.file, `${msg}\n`, function (err) { 
-          if(err)         
-            console.log(err);
-        }); 
-      }
+      return;
     }
+
+   if(q.file) {
+    fs.appendFile(q.file, `${msg}\n`, (err) => { if(err) { console.log(err); }})
+   } else {
+    console.log(msg);
+   }      
   }
 }).listen(4321);
