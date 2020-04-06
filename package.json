@@ -1,0 +1,22 @@
+{
+  "name": "debugmonitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Monitor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northdigital/DebugMonitor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/northdigital/DebugMonitor/issues"
+  },
+  "homepage": "https://github.com/northdigital/DebugMonitor#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
