@@ -14,7 +14,7 @@ create or replace package body debugmonitor.utils is
     buffer         varchar2(4000);
     detailed_error varchar2(4000);
   begin
-    /*
+    --/*
     UTL_HTTP.set_response_error_check(false);
   
     url := utl_url.escape(url || '&msg=' || a_text);

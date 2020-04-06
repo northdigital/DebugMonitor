@@ -19,7 +19,7 @@ BEGIN
   DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl => 'DEBUGMONITOR.xml', principal => 'DEBUGMONITOR', is_grant => true,
                                        privilege => 'resolve');
 
-  dbms_network_acl_admin.assign_acl(acl => 'DEBUGMONITOR.xml', host => /*node host*/ '192.168.8.168', lower_port => 4321, upper_port => null);
+  dbms_network_acl_admin.assign_acl(acl => 'DEBUGMONITOR.xml', host => /*node host*/ '192.168.1.202', lower_port => 4321, upper_port => null);
 END;
 
 /*
