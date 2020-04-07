@@ -43,4 +43,4 @@ http.createServer(function (req, res) {
     console.log(msg);
    }      
   }
-}).listen(4321);
+}).listen(port);
