@@ -4,7 +4,7 @@
   "description": "",
   "main": "Monitor.js",
   "scripts": {
-    "test": "node ./Monitor.js"
+    "start": "node ./Monitor.js"
   },
   "repository": {
     "type": "git",
