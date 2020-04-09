@@ -9,17 +9,28 @@ BEGIN DBMS_NETWORK_ACL_ADMIN.DROP_ACL(acl => '/sys/acls/DEBUGMONITOR.xml'); END;
 */
 
 BEGIN
-  DBMS_NETWORK_ACL_ADMIN.create_acl(acl => 'DEBUGMONITOR.xml', description => 'ACL for GDPR',
-                                    PRINCIPAL => 'DEBUGMONITOR', is_grant => TRUE, privilege => 'connect',
-                                    start_date => SYSTIMESTAMP, end_date => NULL);
+  DBMS_NETWORK_ACL_ADMIN.create_acl(acl => 'DEBUGMONITOR.xml', 
+                                    description => 'ACL for GDPR',
+                                    PRINCIPAL => 'DEBUGMONITOR', 
+                                    is_grant => TRUE, 
+                                    privilege => 'connect',
+                                    start_date => SYSTIMESTAMP, 
+                                    end_date => NULL);
   
-  DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl => 'DEBUGMONITOR.xml', principal => 'DEBUGMONITOR', is_grant => true,
+  DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl => 'DEBUGMONITOR.xml', 
+                                       principal => 'DEBUGMONITOR', 
+                                       is_grant => true,
                                        privilege => 'connect');
 
-  DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl => 'DEBUGMONITOR.xml', principal => 'DEBUGMONITOR', is_grant => true,
+  DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl => 'DEBUGMONITOR.xml', 
+                                       principal => 'DEBUGMONITOR', 
+                                       is_grant => true,
                                        privilege => 'resolve');
 
-  dbms_network_acl_admin.assign_acl(acl => 'DEBUGMONITOR.xml', host => /*node host*/ '192.168.1.202', lower_port => 4321, upper_port => null);
+  dbms_network_acl_admin.assign_acl(acl => 'DEBUGMONITOR.xml', 
+                                    host => /*node host*/ '192.168.1.202', 
+                                    lower_port => 4321, 
+                                    upper_port => null);
 END;
 
 /*
