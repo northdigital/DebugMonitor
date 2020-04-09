@@ -5,22 +5,22 @@ var fs = require('fs');
 
 const port = 4321;
 
-function getIPAddress() {
+function showNetworkInterfaces() {
   var interfaces = require('os').networkInterfaces();
   for (var devName in interfaces) {
     var iface = interfaces[devName];
 
     for (var i = 0; i < iface.length; i++) {
       var alias = iface[i];
-      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal)
-        return alias.address;
-    }
-  }
 
-  return '0.0.0.0';
+      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal)
+      console.log(`${devName}->${alias.address}`);
+    }
+  }  
 }
 
-console.log(`listening at ${getIPAddress()}:${port}`);
+showNetworkInterfaces();
+console.log(`port=${port}`);
 
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
