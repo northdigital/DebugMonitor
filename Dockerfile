@@ -1,7 +1,5 @@
 FROM node:stretch-slim AS build-env
 
-# ARG DEBIAN_FRONTEND=noninteractive
-
 RUN apt update 
 RUN apt upgrade 
 RUN apt install nano
