@@ -1,1 +1,1 @@
-node monitor.js
+npm update && node monitor.js
