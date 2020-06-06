@@ -8,7 +8,6 @@ grant execute on utl_http to DEBUGMONITOR with grant option;
 BEGIN DBMS_NETWORK_ACL_ADMIN.DROP_ACL(acl => '/sys/acls/DEBUGMONITOR.xml'); END;
 */
 
-
 BEGIN
   DBMS_NETWORK_ACL_ADMIN.create_acl(acl => 'DEBUGMONITOR.xml', 
                                     description => 'ACL',
