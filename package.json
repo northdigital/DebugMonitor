@@ -4,7 +4,7 @@
   "description": "",
   "main": "Monitor.js",
   "scripts": {
-    "start": "npm update && node ./Monitor.js"
+    "start": "npm update && node ./monitor.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/northdigital/DebugMonitor#readme",
   "dependencies": {
-    "moment": "^2.25.3"
+    "moment": "^2.26.0"
   }
 }
