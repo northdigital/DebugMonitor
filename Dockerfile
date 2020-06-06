@@ -22,5 +22,5 @@ EXPOSE 4321
 ENV TZ=UTC
 ENV PATH=$PATH:/DebugMonitor
 
-ENTRYPOINT [ "bash", "run.sh" ]
-# ENTRYPOINT [ "bash" ]
+# ENTRYPOINT [ "bash", "run.sh" ]
+ENTRYPOINT [ "bash" ]
