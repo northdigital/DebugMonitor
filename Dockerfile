@@ -8,8 +8,8 @@ WORKDIR /DebugMonitor
 
 COPY ./monitor.js .
 COPY ./package.json .
-COPY ./run.sh .
 
+COPY ./run.sh .
 RUN chmod 777 run.sh
 
 COPY ./node_modules ./node_modules
@@ -22,5 +22,5 @@ EXPOSE 4321
 ENV TZ=UTC
 ENV PATH=$PATH:/DebugMonitor
 
-# ENTRYPOINT [ "npm", "start" ]
-ENTRYPOINT [ "bash" ]
+ENTRYPOINT [ "bash", "run.sh" ]
+# ENTRYPOINT [ "bash" ]
