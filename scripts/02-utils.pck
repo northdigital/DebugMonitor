@@ -10,7 +10,7 @@ create or replace package body debugmonitor.utils is
   procedure debugMonitor(a_text varchar2, a_file in varchar2 := null) is
     req            utl_http.req;
     res            utl_http.resp;
-    base_url       varchar2(4000) := 'http://192.168.1.237:4321/?';
+    base_url       varchar2(4000) := 'http://192.168.1.202:4321/?';
     full_url       varchar2(4000);    
     buffer         varchar2(4000);
     detailed_error varchar2(4000);
