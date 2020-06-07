@@ -15,12 +15,7 @@ BEGIN
                                     is_grant => TRUE, 
                                     privilege => 'connect',
                                     start_date => SYSTIMESTAMP, 
-                                    end_date => NULL);
-  
-  DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl => 'DEBUGMONITOR.xml', 
-                                       principal => 'DEBUGMONITOR', 
-                                       is_grant => true,
-                                       privilege => 'connect');
+                                    end_date => NULL); 
 
   DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl => 'DEBUGMONITOR.xml', 
                                        principal => 'DEBUGMONITOR', 
