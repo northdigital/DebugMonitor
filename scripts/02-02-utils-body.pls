@@ -1,4 +1,4 @@
-create or replace package body              utils is
+create or replace package body              debugmonitor.utils is
 
   -------------------------------------------------------------------------------------
   procedure debugMonitor(a_text varchar2, a_file in varchar2 := null) is
