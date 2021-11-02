@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/northdigital/DebugMonitor#readme",
   "dependencies": {
-    "moment": "^2.27.0"
+    "moment": "^2.29.1"
   }
 }
