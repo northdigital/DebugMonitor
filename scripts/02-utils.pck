@@ -10,7 +10,7 @@ create or replace package body debugmonitor.utils is
   procedure debugMonitor(a_text varchar2, a_file in varchar2 := null) is
     req            utl_http.req;
     res            utl_http.resp;
-    base_url       varchar2(4000) := 'http://192.168.1.202:4321/?';
+    base_url       varchar2(4000) := 'http://192.168.1.207:4321/?';
     full_url       varchar2(4000);    
     buffer         varchar2(4000);
     detailed_error varchar2(4000);
@@ -29,9 +29,8 @@ create or replace package body debugmonitor.utils is
     utl_http.read_line(res, buffer);
     utl_http.end_response(res);
   exception
-    when utl_http.end_of_body then
-      utl_http.end_response(res);
     when others then
+      utl_http.end_response(res);
       select utl_http.get_detailed_sqlerrm into detailed_error from dual;
       raise_application_error(-20001,
                               'An error was encountered - ' || SQLCODE || ' -ERROR- ' || SQLERRM || ' detailed_error=' ||
