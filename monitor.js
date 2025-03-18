@@ -38,6 +38,8 @@ http.createServer(function (req, res) {
         return;
       }
 
+      q.msg = (new Date).toLocaleString() + " " + q.msg;
+
       if (q.file) {
         let line = q.msg;
         fs.appendFile(q.file, `${q.msg}\n`, (err) => { if (err) { console.log(err); } })
